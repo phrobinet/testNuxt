@@ -16,6 +16,6 @@ phases:
       - npm run build
       - npm run generate
 artifacts:
-  base-directory: dist/
+  base-directory: dist
   files:
     - '**/*'

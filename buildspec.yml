@@ -1,17 +1,21 @@
 version: 0.2
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - yarn install
-    build:
-      commands:
-        - npm run generate
-  artifacts:
-    # IMPORTANT - Please verify your build output directory
-    baseDirectory: dist
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - npm i npm@latest -g
+      - npm install nuxt
+  pre_build:
+    commands:
+      echo Pre_build Phase
+      - npm install
+  build:
+    commands:
+      echo Build Phase
+      - npm run build
+      - npm run generate
+artifacts:
+  base-directory: dist/
+  files:
+    - '**/*'

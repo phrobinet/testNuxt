@@ -10,7 +10,6 @@ phases:
       - npm install
   build:
     commands:
-      - npm run test --no-watch --no-progress --browser=ChromeHeadlessCI
       - npm run build
       - npm run generate
 artifacts:
